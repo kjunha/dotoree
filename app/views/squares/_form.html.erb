@@ -1,0 +1,9 @@
+<%= bootstrap_form_with(model: @square, local: true) do |f| %>
+    <%= f.alert_message "Please fix the errors below", error_summary: false %>
+    <%= f.text_field :name %>
+    <%= f.text_field :detail %>
+    <%= f.form_group do %>
+        <%= f.primary @square.persisted? ? "Update" : "Create" %>
+        <%= link_to "Cancel", squares_path %>
+    <% end %>
+<% end %>
