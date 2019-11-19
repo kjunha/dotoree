@@ -2,6 +2,6 @@
     <p>Name: <%= square.name %></p>
     <p>Detail: <%= square.detail%></p>
     <%= link_to "show", square %> |
-    <%= link_to "edit", squares_path %> |
-    <%= link_to "destroy", squares_path %>
+    <%= link_to "edit", square %> |
+    <%= link_to "destroy", square, method: :delete, data: {confirm: "Do you want to delete this square?"} %>
 </div>

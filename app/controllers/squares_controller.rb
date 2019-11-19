@@ -1,8 +1,9 @@
 class SquaresController < ApplicationController
+  before_action :authenticate
   before_action :load_square, except: [:index, :new, :create]
   
   def index
-    @squares = Square.all
+    @squares = current_user.squares.all
   end
   
   def new
@@ -11,6 +12,7 @@ class SquaresController < ApplicationController
   
   def create
     @square = Square.new square_params
+    @square.user = current_user
     if @square.save
       redirect_to squares_path, notice: "New Square Created!"
     else
@@ -44,6 +46,7 @@ class SquaresController < ApplicationController
   end
   
   def load_square
+    @square = current_user.squares.find params[:id]
   end
   
 end
