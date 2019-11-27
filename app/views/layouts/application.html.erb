@@ -11,6 +11,34 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Dotoree</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="d-flex navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <!--if logged in-->
+          <li class="nav-item">
+            <%= link_to "Square", squares_path, {:class => "nav-link"}%>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Catalog</a>
+          </li>
+          
+        </ul>
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+          <%= link_to '<button class="btn btn-secondary" type="button" name="button">Login</button>'.html_safe, login_path %>
+          <button class="btn btn-primary" type="button" name="button"><%= link_to "Sign up", signup_path%></button>
+        </ul>
+      </div>
+    </nav>
    <!--Flash Message-->
     <div id="flash-message" class="row">
       <% flash.each do |name, message| %>
