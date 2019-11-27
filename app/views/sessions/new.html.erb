@@ -1,13 +1,14 @@
-<h1>Sessions#new</h1>
-<h1>Log in</h1>
-
-<%= bootstrap_form_with(url: sessions_path, method: :post, local: true) do |f| %>
-    <%= f.alert_message "please fix the errors below", error_summary: false %>
-    <%= f.email_field :email %>
-    <%= f.password_field :password %>
-    <%= f.form_group do %>
-        <%= f.primary "Log in"%>
-    <%end%>        
-<%end%>
-
-<p><%= link_to "Login with Github", "auth/github" %></p>
+<div class="form-signin login">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <%= bootstrap_form_with(url: sessions_path, method: :post, local: true) do |f| %>
+        <%= f.alert_message "please fix the errors below", error_summary: false %>
+        <label class="sr-only">Email address</label>
+        <%= f.email_field :email %>
+        <label class="sr-only">Password</label>
+        <%= f.password_field :password %>
+        <%= f.form_group do %>
+            <%= f.primary "Log in"%>
+        <%end%>        
+    <%end%>
+    <p><%= link_to "Login with Github", "auth/github" %></p>
+</div>

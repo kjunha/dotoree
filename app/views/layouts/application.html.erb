@@ -35,7 +35,8 @@
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
           <%= link_to '<button class="btn btn-secondary" type="button" name="button">Login</button>'.html_safe, login_path %>
-          <button class="btn btn-primary" type="button" name="button"><%= link_to "Sign up", signup_path%></button>
+          <%= link_to ' <button class="btn btn-primary" type="button" name="button"></button> ', signup_path%>
+          
         </ul>
       </div>
     </nav>
@@ -50,6 +51,8 @@
         </div>
       <% end %>
     </div>
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
 </html>
