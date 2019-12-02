@@ -19,14 +19,14 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="d-flex navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <%= link_to "Home", root_path, {:class => "nav-link"}%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <%= link_to "About", about_path, {:class => "nav-link"}%>
           </li>
           <!--if logged in-->
           <li class="nav-item">
-            <%= link_to "Square", squares_path, {:class => "nav-link"}%>
+            <%= link_to "My Square", squares_path, {:class => "nav-link"}%>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Catalog</a>
@@ -35,8 +35,7 @@
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
           <%= link_to '<button class="btn btn-secondary" type="button" name="button">Login</button>'.html_safe, login_path %>
-          <%= link_to ' <button class="btn btn-primary" type="button" name="button"></button> ', signup_path%>
-          
+          <%= link_to '<button class="btn btn-primary" type="button" name="button">Sign up</button>'.html_safe, signup_path%>
         </ul>
       </div>
     </nav>
