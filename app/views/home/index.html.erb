@@ -1,10 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<% if current_user %>
-    <p><%= current_user.name %> | 
-    <%= link_to "Log out", logout_path %> |
-    <%= link_to "Account Management", edit_user_path(current_user) %></p>
-<% else %>
-    <p><%= link_to "Log in", login_path %> | <%= link_to "Sign up", signup_path%></p>
-<% end %>
-<%= link_to "Square", squares_path %>
+<div id="main-banner" class="jumbotron">
+  <h1 class="display-4">Welcome to Dotoree</h1>
+  <% if current_user %>
+      <p class="lead"> Hello, <%= current_user.name %>. You can see your squares, or you can also create new square. </p>
+  <% else %>
+      <p class="lead"> You can sign-up for free with your e-mail account. Already member? please log in. </p>
+  <% end %>
+  <hr class="my-4">
+    <p>
+        Dotoree is discussion board web application <br>
+        see about page to find more information. <br>
+        You can sign-in for free with your e-mail account.
+    </p>
+  <p class="lead">
+    <%= link_to '<button class="btn btn-primary" type="button" name="button">Learn more</button>'.html_safe, about_path%>
+  </p>
+</div>

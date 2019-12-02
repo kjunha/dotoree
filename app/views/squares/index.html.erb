@@ -1,6 +1,9 @@
-<h1>Squares#index</h1>
-<p>Find me in app/views/squares/index.html.erb</p>
-<%= link_to "Home", root_path %> |
-<%= link_to "New", new_square_path %>
+<div class="section_title">
+    <h1>Your Squares</h1>
+</div>
+<div id="intro_banner">
+    <p>Find all squares that you subscribed or created.</p>
+    <%= link_to '<button class="btn btn-primary" type="button" name="button">New Square</button>'.html_safe, new_square_path%>
+</div>
 <%= render @squares %>
 
