@@ -1,0 +1,9 @@
+<%= bootstrap_form_with(model: [@square, @discussion, @comment], local: true) do |f| %>
+    <%= f.alert_message "Please fix the errors below", error_summary: false %>
+    <div class="comment_line">
+        <%= f.text_field :body %>
+        <%= f.form_group do %>
+            <%= f.primary "Post" %>
+        <% end %>  
+    </div>
+<% end %>

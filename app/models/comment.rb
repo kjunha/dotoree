@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-    belongs_to: discussions
+    belongs_to :discussion
     
     validates :body, presence: true
     

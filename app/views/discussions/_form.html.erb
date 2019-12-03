@@ -2,7 +2,7 @@
     <%= f.alert_message "Please fix the errors below", error_summary: false %>
     <%= f.text_field :body %>
     <%= f.form_group do %>
-        <%= f.primary @square.persisted? ? "Update" : "Create" %>
+        <%= f.primary @discussion.persisted? ? "Update" : "Create" %>
         <%= link_to "Cancel", squares_path %>
     <% end %>
 <% end %>

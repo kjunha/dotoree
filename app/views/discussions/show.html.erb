@@ -1,5 +1,7 @@
 <div class="section_title">
-    <h1>Discussion#<%= @discussion.id %></h1>
+    <h1>Discusstion Topic:</h1>
+    <h3><%= @discussion.body %></h3>
 </div>
 
-<%= render @discussion %>
+<%= render @discussion.comments %>
+<%= render 'comments/form' %>

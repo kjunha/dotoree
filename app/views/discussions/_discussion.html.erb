@@ -2,6 +2,6 @@
     <p>Creator: <%= discussion.creator %></p>
     <p>Contents: <%= discussion.body %></p>
     <%= link_to "Update", edit_square_discussion_path(@square, discussion)%> | 
-    <%= link_to "View Comment", @square %> | 
+    <%= link_to "View Comment", square_discussion_path(@square, discussion) %> | 
     <%= link_to "Delete", square_discussion_path(@square, discussion), method: :delete, data: {confirm:"Do you want to delete this discussion?"} %>
 </div>
