@@ -1,5 +1,6 @@
 class DiscussionsController < ApplicationController
   before_action :load_square
+  before_action :load_discussion, except: [:index, :new, :create]
   
   def index
     @discussions = @square.discussions
@@ -26,9 +27,16 @@ class DiscussionsController < ApplicationController
   end
   
   def update
+    if @discussion.update_attributes discussion_params
+      redirect_to @square, notice: "Discussion Updated"
+    else
+      render :edit
+    end
   end
   
   def destroy
+    @discussion.destroy
+    redirect_to @square, alert: "Discussion Removed."
   end
   
   private
@@ -39,5 +47,9 @@ class DiscussionsController < ApplicationController
   
   def load_square
     @square = Square.find params[:square_id]
+  end
+  
+  def load_discussion
+    @discussion = @square.discussions.find params[:id]
   end
 end
