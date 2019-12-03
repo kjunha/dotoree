@@ -1,9 +1,14 @@
 <h1>Square#ID:<%= @square.id %></h1>
 <p>Find me in app/views/squares/show.html.erb</p>
-<%= link_to "New Discussion", new_square_discussion_path(@square) %>
-<p>Name: <%= @square.name %></p>
-<p>Creator: <%= @square.user.name %></p>
-<p>Detail: <%= @square.detail%></p>
+<div class="contents_square">
+    <p>Name: <%= @square.name %></p>
+    <p>Creator: <%= @square.user.name %></p>
+    <p>Detail: <%= @square.detail%></p>
+    <%= link_to '<button class="btn btn-primary" type="button" name="button">New Discussion</button>'.html_safe, new_square_discussion_path(@square) %>
+    <%= link_to '<button class="btn btn-secondary" type="button" name="button">Back</button>'.html_safe, squares_path %>
+</div>
 <h2>Discussions</h2>
-<%= render @square.discussions %>
+<div class="contents_square">
+    <%= render @square.discussions %>
+</div>
 

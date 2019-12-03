@@ -1,0 +1,12 @@
+<h1>Reset Password</h1>
+<div class="form-signin login">
+    <h1 class="h3 mb-3 font-weight-normal">Reset Your Password</h1>
+    <%= bootstrap_form_with(url: passwords_path, method: :post, local: true) do |f| %>
+        <%= f.alert_message "please fix the errors below", error_summary: false %>
+        <label class="sr-only">Email address</label>
+        <%= f.email_field :email %>
+        <%= f.form_group do %>
+            <%= f.primary "reset"%>
+        <%end%>        
+    <%end%>
+</div>

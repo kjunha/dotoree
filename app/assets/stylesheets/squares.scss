@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .square {
     border: 1px solid;
-    border-color: #000000;
+    border-color: #555555;
     margin-top: 30px;
+    border-radius: 3px;
+    padding: 5px;
 }
 
-#intro_banner {
+.contents_square{
     background-color: #cccccc;
     padding: 5px;
 }

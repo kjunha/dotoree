@@ -11,7 +11,7 @@ class DiscussionsController < ApplicationController
   
   def create
     @discussion = Discussion.new discussion_params
-    
+    @discussion.creator = current_user.name
     if @square.discussions << @discussion
       redirect_to @square, notice: "Discussion has been made."
     else
@@ -33,7 +33,7 @@ class DiscussionsController < ApplicationController
   
   private
   def discussion_params
-    params.require(:discussion).permit(:body, :date)
+    params.require(:discussion).permit(:body)
     
   end
   
