@@ -48,4 +48,17 @@ class SquaresTest < ApplicationSystemTestCase
     assert_text "Square Information Updated!"
     assert_text "Name: Edit case"
   end
+  
+  test "delete square" do
+    user = login_user
+    square1 = FactoryBot.create :square, user: user
+    visit squares_path
+    
+    page.accept_confirm do
+      click_link 'destroy'
+    end
+        
+    assert_text "Square Deleted."
+    refute_text "Name: Edit case"
+  end
 end
