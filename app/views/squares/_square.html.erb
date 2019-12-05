@@ -4,7 +4,7 @@
     <p>Detail: <%= square.detail%></p>
     <% if square.user.name == current_user.name %>
         <%= link_to "show", square %> |
-        <%= link_to "edit", square %> |
+        <%= link_to "edit", edit_square_path(square) %> |
         <%= link_to "destroy", square, method: :delete, data: {confirm: "Do you want to delete this square?"} %>
     <% else %>
         <%= link_to "show", square %>

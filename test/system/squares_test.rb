@@ -34,4 +34,18 @@ class SquaresTest < ApplicationSystemTestCase
     assert_text "New Square Created!"
     assert_text "Name: Test case"
   end
+  
+  test "edit square" do
+    user = login_user
+    square1 = FactoryBot.create :square, user: user
+    visit squares_path
+    
+    click_on "edit"
+    fill_in "Name", with: "Edit case"
+    fill_in "Detail", with: "edit edit edit"
+    click_button "Update"
+    
+    assert_text "Square Information Updated!"
+    assert_text "Name: Edit case"
+  end
 end
